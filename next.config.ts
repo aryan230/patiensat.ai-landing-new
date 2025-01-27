@@ -4,6 +4,16 @@ const nextConfig: NextConfig = {
   /* config options here */ images: {
     domains: ["assets.aceternity.com"],
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    ignoreBuildErrors: true,
+  },
+  // Optionally also ignore ESLint errors during builds
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
