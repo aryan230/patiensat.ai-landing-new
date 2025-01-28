@@ -10,12 +10,16 @@ import { cn } from "@/functions";
 import { motion } from "framer-motion";
 import {
   Box,
+  Calculator,
   CalendarClock,
   Captions,
   CircleHelp,
   CopyCheck,
+  File,
   FileText,
+  GalleryVerticalEnd,
   Gem,
+  Hospital,
   Layers3,
   LineChart,
   Newspaper,
@@ -59,12 +63,9 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
             onClick={() => setIsOpen(false)}
             className="w-full px-4 py-2 text-lg hover:text-muted-foreground font-normal transition transform rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80"
           >
-            <Link
-              href="/how-it-works"
-              className="flex items-center w-full text-start"
-            >
+            <Link href="/" className="flex items-center w-full text-start">
               <UserCog className="w-4 h-4 mr-2" />
-              How it works
+              Features
             </Link>
           </li>
           <Accordion type="single" collapsible className="w-full">
@@ -72,7 +73,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
               <AccordionTrigger className="px-4 py-2 text-lg hover:text-muted-foreground font-normal">
                 <span className="flex items-center">
                   <CopyCheck className="w-4 h-4 mr-2" />
-                  Features
+                  Request Demo
                 </span>
               </AccordionTrigger>
               <AccordionContent
@@ -81,29 +82,29 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
               >
                 <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
                   <Link
-                    href="/"
+                    href="https://app.patientsat.ai/scenario-simulator"
                     className="flex items-center w-full text-start"
                   >
-                    <Captions className="w-4 h-4 mr-2" />
-                    Caption Generation
+                    <GalleryVerticalEnd className="w-4 h-4 mr-2" />
+                    Scenario Simulator
                   </Link>
                 </li>
                 <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
                   <Link
-                    href="/"
+                    href="https://app.patientsat.ai/epic-integration"
                     className="flex items-center w-full text-start"
                   >
-                    <CalendarClock className="w-4 h-4 mr-2" />
-                    Post Scheduling
+                    <File className="w-4 h-4 mr-2" />
+                    Epic Integration
                   </Link>
                 </li>
                 <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
                   <Link
-                    href="/"
+                    href="https://app.patientsat.ai/telehealth"
                     className="flex items-center w-full text-start"
                   >
-                    <LineChart className="w-4 h-4 mr-2" />
-                    Analytics Dashboard
+                    <Hospital className="w-4 h-4 mr-2" />
+                    Telehealth Demo
                   </Link>
                 </li>
               </AccordionContent>
@@ -139,6 +140,16 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
                 onClick={() => setIsOpen(false)}
                 className="flex flex-col items-start gap-1 mt-1"
               >
+                {" "}
+                <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
+                  <Link
+                    href="https://app.patientsat.ai/roi-calculator"
+                    className="flex items-center w-full text-start"
+                  >
+                    <Calculator className="w-4 h-4 mr-2" />
+                    ROI Calculator
+                  </Link>
+                </li>
                 <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
                   <Link
                     href="/"
@@ -148,7 +159,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
                     Blog
                   </Link>
                 </li>
-                <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
+                {/* <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
                   <Link
                     href="/"
                     className="flex items-center w-full text-start"
@@ -165,7 +176,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
                     <Box className="w-4 h-4 mr-2" />
                     Tools
                   </Link>
-                </li>
+                </li> */}
                 <li className="w-full px-4 py-2 text-lg font-normal transition transform rounded-md cursor-pointer text-foreground/80 hover:text-muted-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80">
                   <Link
                     href="/"
