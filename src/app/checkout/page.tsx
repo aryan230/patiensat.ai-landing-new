@@ -105,11 +105,11 @@ const CheckoutPage = () => {
             <h1 className="text-3xl font-semibold text-[#032c4c] mb-3">
               Checkout
             </h1>
-            <p className="text-gray-500 mb-8">
+            {/* <p className="text-gray-500 mb-8">
               A checkout is a counter where you pay for things you are buying
-            </p>
+            </p> */}
 
-            <div className="space-y-8">
+            <div className="space-y- pt-10">
               <div>
                 <h2 className="text-sm font-medium text-[#032c4c] mb-6">
                   1. Contact information
@@ -174,11 +174,11 @@ const CheckoutPage = () => {
           {/* Right Section - Order Summary */}
           <div className="lg:w-[400px] mt-8 lg:mt-0">
             <div className="bg-gray-50 rounded-lg p-6">
-              <div className="flex justify-between items-center mb-6">
+              {/* <div className="flex justify-between items-center mb-6">
                 <h2 className="text-lg font-semibold text-[#032c4c]">
                   36 items
                 </h2>
-              </div>
+              </div> */}
 
               <div className="space-y-4">
                 <div className="flex justify-between text-sm">
