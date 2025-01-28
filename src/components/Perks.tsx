@@ -62,8 +62,8 @@ const Perks = () => {
             Discover the benefits
           </h2>
           <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-            Explore the powerful features and advantages that Luro offer to help
-            you grow your social media presence
+            Leverage advanced functionalities to optimize performance and
+            elevate your outcomes.
           </p>
         </div>
       </Container>

@@ -1,4 +1,5 @@
 import { Agents } from "@/components/Agents";
+import AICardShowcase from "@/components/AICard";
 import { AnimatedBeamDemo } from "@/components/Connections";
 import Drawback from "@/components/Drawback";
 import Features from "@/components/Features";
@@ -35,7 +36,7 @@ function Page() {
             <div className="hidden lg:w-52 h-52 rounded-full bg-blue-500 blur-[10rem] opacity-70 -z-10"></div>
           </div>
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-            <span>✨ Introducing Magic UI</span>
+            <span>✨ Limited time deal! Get flat 75% OFF</span>
             <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
           </AnimatedShinyText>
           <h1 className="text-slate-800 py-6 text-4xl sm:text-6xl md:text-7xl font-semibold md:font-bold !leading-snug tracking-normal text-balance w-full">
@@ -58,16 +59,18 @@ function Page() {
             </Link>
           </div>
         </div>
+
         <Drawback />
         <Agents />
         <Perks />
 
-        <TabsFeatures />
+        {/* <TabsFeatures /> */}
         {/* <TextReveal text="Magic UI will change the way you design." /> */}
         <TimelineDemo />
         <Integration />
-        <Pricing />
         <GlobeDemo />
+        <Pricing />
+
         {/* <AnimatedBeamDemo /> */}
         <Lamp />
         {/* <Container className="py-8 lg:py-20">

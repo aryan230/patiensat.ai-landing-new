@@ -11,9 +11,17 @@ import { cn } from "@/functions";
 import Wrapper from "./global/wrapper";
 import Menu from "./Menu";
 import MobileMenu from "./MobileMenu";
+import { IconSquareRoundedX } from "@tabler/icons-react";
+import { MultiStepLoader } from "./ui/multi-step-loader";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
+  const loadingStates = [
+    {
+      text: "Buying a condo",
+    },
+  ];
 
   useEffect(() => {
     if (isOpen) {
@@ -29,6 +37,19 @@ const Navbar = () => {
 
   return (
     <div className="relative w-full h-full">
+      {loading && (
+        <button
+          className="fixed top-4 right-4 text-black dark:text-white z-[99999999]"
+          onClick={() => setLoading(false)}
+        >
+          <IconSquareRoundedX className="h-10 w-10" />
+        </button>
+      )}
+      <MultiStepLoader
+        loadingStates={loadingStates}
+        loading={loading}
+        duration={2000}
+      />
       <div className="z-[99] fixed pointer-events-none inset-x-0 h-[88px] bg-[rgba(255,255,255,0.8)] backdrop-blur-sm [mask:linear-gradient(to_bottom,#000_20%,transparent_calc(100%-20%))]"></div>
 
       <header
@@ -61,7 +82,9 @@ const Navbar = () => {
                   asChild
                   className="hover:translate-y-0 hover:scale-100"
                 >
-                  <Link href="/auth/signin">Login</Link>
+                  <Link href="https://app.patientsat.ai/login" target="_blank">
+                    Login
+                  </Link>
                 </Button>
                 <Button
                   size="sm"
@@ -69,7 +92,7 @@ const Navbar = () => {
                   asChild
                   className="hidden sm:flex"
                 >
-                  <Link href="/auth/signup">
+                  <Link href="#" onClick={() => setLoading(true)}>
                     Start for free
                     <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
                   </Link>

@@ -4,22 +4,47 @@ import { PLANS } from "@/constants";
 import NumberFlow from "@number-flow/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckIcon } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Container from "./global/container";
 import { cn } from "@/functions";
 import { Button } from "./ui/button";
+import { IconSquareRoundedX } from "@tabler/icons-react";
+import { MultiStepLoader } from "./ui/multi-step-loader";
+import { Drawer } from "vaul";
+import { usePriceStore } from "@/store/usePriceStore";
+import { useRouter } from "next/navigation";
 
 type Plan = "monthly" | "annually";
 
-const Pricing = () => {
+const VaulDrawer = () => {
+  return (
+    <Drawer.Root>
+      <Drawer.Portal>
+        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+        <Drawer.Content className="bg-gray-100 h-fit fixed bottom-0 left-0 right-0 outline-none">
+          <div className="p-4 bg-white">{/* Content */}</div>
+        </Drawer.Content>
+      </Drawer.Portal>
+    </Drawer.Root>
+  );
+};
+
+const Pricing = ({
+  setLoading,
+  setLoadingStates,
+}: {
+  setLoading: React.PropTypes.any;
+  setLoadingStates: React.PropTypes.any;
+}) => {
   const [billPlan, setBillPlan] = useState<Plan>("monthly");
+  const [selectedPlan, setSelectedPlan] = useState();
 
   const handleSwitch = () => {
     setBillPlan((prev) => (prev === "monthly" ? "annually" : "monthly"));
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto">
+    <div className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto ">
       <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
         <Container>
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
@@ -58,7 +83,13 @@ const Pricing = () => {
       <div className="grid w-full grid-cols-1 lg:grid-cols-3 pt-8 lg:pt-12 gap-2 lg:gap-6 max-w-full mx-auto">
         {PLANS.map((plan, idx) => (
           <Container key={idx} delay={0.1 * idx + 0.2}>
-            <Plan key={plan.id} plan={plan} billPlan={billPlan} />
+            <Plan
+              key={plan.id}
+              plan={plan}
+              billPlan={billPlan}
+              setLoadingStates={setLoadingStates}
+              setLoading={setLoading}
+            />
           </Container>
         ))}
       </div>
@@ -66,7 +97,19 @@ const Pricing = () => {
   );
 };
 
-const Plan = ({ plan, billPlan }: { plan: PLAN; billPlan: Plan }) => {
+const Plan = ({
+  plan,
+  billPlan,
+  setLoadingStates,
+  setLoading,
+}: {
+  plan: PLAN;
+  billPlan: Plan;
+  setLoadingStates: React.PropTypes.any;
+  setLoading: React.PropTypes.any;
+}) => {
+  const router = useRouter();
+  const { setPrice, setPlan } = usePriceStore();
   return (
     <div
       className={cn(
@@ -82,28 +125,53 @@ const Plan = ({ plan, billPlan }: { plan: PLAN; billPlan: Plan }) => {
         <h2 className="font-medium text-xl text-foreground pt-5">
           {plan.title}
         </h2>
-        <h3 className="mt-3 text-3xl font-medium md:text-5xl">
-          <NumberFlow
-            value={
-              billPlan === "monthly" ? plan.monthlyPrice : plan.annuallyPrice
-            }
-            suffix={billPlan === "monthly" ? "/mo" : "/yr"}
-            format={{
-              currency: "USD",
-              style: "currency",
-              currencySign: "standard",
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-              currencyDisplay: "narrowSymbol",
-            }}
-          />
-        </h3>
+        {plan.title === "Enterprise" ? (
+          <h3 className="mt-3 text-3xl font-medium md:text-5xl pt-5">Custom</h3>
+        ) : (
+          <h3 className="mt-3 text-3xl font-medium md:text-5xl">
+            <NumberFlow
+              value={
+                billPlan === "monthly" ? plan.monthlyPrice : plan.yearlyPrice
+              }
+              suffix={billPlan === "monthly" ? "/mo" : "/mo"}
+              format={{
+                currency: "USD",
+                style: "currency",
+                currencySign: "standard",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+                currencyDisplay: "narrowSymbol",
+              }}
+            />
+          </h3>
+        )}
+
         <p className="text-sm md:text-base text-muted-foreground mt-2">
           {plan.desc}
         </p>
       </div>
       <div className="flex flex-col items-start w-full px-4 py-2 md:px-8">
-        <Button size="lg" variant={"default"} className="w-full text-white">
+        <Button
+          size="lg"
+          variant={"default"}
+          className="w-full text-white"
+          onClick={() => {
+            setPlan(plan.title);
+            setPrice(
+              billPlan === "monthly" ? plan.monthlyPrice : plan.yearlyPrice
+            );
+            // router.push("/checkout");
+            router.push("/checkout");
+            // setLoadingStates([
+            //   {
+            //     text: "payment",
+            //     amount:
+            //       billPlan === "monthly" ? plan.monthlyPrice : plan.yearlyPrice,
+            //   },
+            // ]);
+            // setLoading(true);
+          }}
+        >
           {plan.buttonText}
         </Button>
         <div className="h-8 overflow-hidden w-full mx-auto">

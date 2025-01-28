@@ -12,20 +12,24 @@ const Footer = () => {
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col items-start justify-start md:max-w-[200px]">
             <div className="flex items-start">
+              <span className="text-lg font-black bg-gradient-to-b from-[#6FB1CC] to-[#025F81] bg-clip-text text-transparent">
+                PATIENT
+              </span>
+              <span className="text-lg font-black text-[#002950]">SAT</span>
+              <span className="text-lg font-black bg-gradient-to-b from-[#6FB1CC] to-[#025F81] bg-clip-text text-transparent">
+                .AI
+              </span>
               {/* <Icons.logo className="w-7 h-7" /> */}
             </div>
             <p className="text-muted-foreground mt-4 text-sm text-start">
-              Manage your links with ease.
+              AI-powered voice assistance that maintains the human touch.
             </p>
-            <span className="mt-4 text-neutral-200 text-sm flex items-center">
+            {/* <span className="mt-4 text-neutral-200 text-sm flex items-center">
               Made by{" "}
-              <Link
-                href="https://shreyas-sihasane.vercel.app/"
-                className="font-semibold ml-1"
-              >
-                Aryan
+              <Link href="/" className="font-semibold ml-1">
+                Aryan Agat
               </Link>
-            </span>
+            </span> */}
           </div>
         </AnimationContainer>
 
@@ -33,7 +37,9 @@ const Footer = () => {
           <div className="md:grid md:grid-cols-2 md:gap-8">
             <AnimationContainer delay={0.2}>
               <div className="">
-                <h3 className="text-base font-medium text-white">Product</h3>
+                <h3 className="text-base font-medium text-slate-500">
+                  Product
+                </h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
@@ -56,7 +62,7 @@ const Footer = () => {
                       href=""
                       className="hover:text-foreground transition-all duration-300"
                     >
-                      Testimonials
+                      ROI Calculator
                     </Link>
                   </li>
                   <li className="mt-2">
@@ -72,9 +78,7 @@ const Footer = () => {
             </AnimationContainer>
             <AnimationContainer delay={0.3}>
               <div className="mt-10 md:mt-0 flex flex-col">
-                <h3 className="text-base font-medium text-white">
-                  Integrations
-                </h3>
+                <h3 className="text-base font-medium text-slate-500">Social</h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="">
                     <Link
@@ -115,7 +119,9 @@ const Footer = () => {
           <div className="md:grid md:grid-cols-2 md:gap-8">
             <AnimationContainer delay={0.4}>
               <div className="">
-                <h3 className="text-base font-medium text-white">Resources</h3>
+                <h3 className="text-base font-medium text-slate-500">
+                  Resources
+                </h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
@@ -138,7 +144,9 @@ const Footer = () => {
             </AnimationContainer>
             <AnimationContainer delay={0.5}>
               <div className="mt-10 md:mt-0 flex flex-col">
-                <h3 className="text-base font-medium text-white">Company</h3>
+                <h3 className="text-base font-medium text-slate-500">
+                  Company
+                </h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="">
                     <Link
@@ -181,7 +189,7 @@ const Footer = () => {
       </div>
 
       <div className="h-[20rem] lg:h-[20rem] hidden md:flex items-center justify-center">
-        <TextHoverEffect text="PATIENSAT.AI" />
+        <TextHoverEffect text="PATIENTSAT.AI" />
       </div>
     </footer>
   );

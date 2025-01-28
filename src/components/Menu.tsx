@@ -9,9 +9,13 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
+  Calculator,
   CalendarRangeIcon,
   CircleHelp,
+  File,
+  GalleryVerticalEnd,
   HashIcon,
+  Hospital,
   Newspaper,
   UsersIcon,
 } from "lucide-react";
@@ -31,15 +35,15 @@ const Menu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none">
-              How it works
+              Features
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground bg-transparent">
-            Features
+            Request Demo
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid rounded-3xl gap-3 p-4 md:w-[400px] lg:w-[500px] xl:w-[550px] lg:grid-cols-[.75fr_1fr]">
@@ -62,31 +66,31 @@ const Menu = () => {
                     </div>
 
                     <p className="text-sm text-muted-foreground mt-1">
-                      Your ultimate social media management tool
+                      AI-powered voice assistance that maintains the human touch
                     </p>
                   </Link>
                 </NavigationMenuLink>
               </li>
               <Item
-                title="Content Calendar"
-                href="/features/content-calendar"
-                icon={<CalendarRangeIcon className="w-5 h-5" />}
+                title="Scenario Simulator"
+                href="https://app.patientsat.ai/scenario-simulator"
+                icon={<GalleryVerticalEnd className="w-5 h-5" />}
               >
-                Plan and visualize your content strategy.
+                Explore various patient communication scenarios.
               </Item>
               <Item
-                title="Hashtag Manager"
-                href="/features/hashtag-manager"
-                icon={<HashIcon className="w-5 h-5" />}
+                title="Epic Integration"
+                href="https://app.patientsat.ai/epic-integration"
+                icon={<File className="w-5 h-5" />}
               >
-                Research and track trending hashtags.
+                See PatientSat AI integrates with your Epic EHR system.
               </Item>
               <Item
-                title="Competitor Analysis"
-                href="/features/competitor-analysis"
-                icon={<UsersIcon className="w-5 h-5" />}
+                title="Telehealth Demo"
+                href="https://app.patientsat.ai/telehealth"
+                icon={<Hospital className="w-5 h-5" />}
               >
-                Monitor and analyze competitor performance.
+                Experience our AI-powered telehealth capabilities firsthand.
               </Item>
             </ul>
           </NavigationMenuContent>
@@ -111,16 +115,24 @@ const Menu = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] xl:w-[500px]">
+              {" "}
+              <Item
+                title="ROI Calculator"
+                href="https://app.patientsat.ai/roi-calculator"
+                icon={<Calculator className="w-5 h-5" />}
+              >
+                Measure Your Investment Impact
+              </Item>
               <Item
                 title="Blog"
-                href="/resources/blog"
+                href="/"
                 icon={<Newspaper className="w-5 h-5" />}
               >
                 Read our latest articles and updates.
               </Item>
               <Item
                 title="Support"
-                href="/resources/support"
+                href="/"
                 icon={<CircleHelp className="w-5 h-5" />}
               >
                 Get help with any issues you may have.
@@ -140,6 +152,7 @@ const Item = ({ title, href, children, icon, ...props }: Props) => {
         <Link
           passHref
           href={href}
+          target="_blank"
           {...props}
           className="grid grid-cols-[.15fr_1fr] select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/50 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
         >
