@@ -78,7 +78,7 @@ function HeroNew({}) {
         <div className="hidden lg:w-52 h-52 rounded-full bg-blue-500 blur-[10rem] opacity-70 -z-10"></div>
       </div>
       <div className="flex items-center justify-between w-[120%]">
-        <div className="w-[70%] text-center">
+        <div className="w-[80%] mx-auto md:w-[70%] text-center">
           {" "}
           <div className="flex flex-col items-center justify-center gap-2">
             <TextGenerateEffect
@@ -123,7 +123,7 @@ function HeroNew({}) {
           </div>
         </div>
 
-        <div className="">
+        <div className="hidden md:block">
           <img src="/images/hero.png" />
         </div>
       </div>
