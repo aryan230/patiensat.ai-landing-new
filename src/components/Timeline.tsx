@@ -109,22 +109,6 @@ export function TimelineDemo() {
         </div>
       ),
     },
-    {
-      title: "Requirements",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Internet connection
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Phone system
-          </p>{" "}
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Basic computer setup
-          </p>
-        </div>
-      ),
-    },
   ];
   return (
     <div className="w-full">

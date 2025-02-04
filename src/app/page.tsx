@@ -1,8 +1,12 @@
 "use client";
 import { Agents } from "@/components/Agents";
+import { AuroraBackgroundDemo } from "@/components/Agents/ViewAgent";
+import AIShowcase from "@/components/AIAgents";
 import AICardShowcase from "@/components/AICard";
 import { AnimatedBeamDemo } from "@/components/Connections";
 import Drawback from "@/components/Drawback";
+import { FollowingPointerDemo } from "@/components/Drawbacks/Drawbacks";
+import EHRIntegrationSection from "@/components/EHR";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Background from "@/components/global/background";
@@ -11,11 +15,13 @@ import Icons from "@/components/global/icons";
 import Wrapper from "@/components/global/wrapper";
 import { GlobeDemo } from "@/components/GlobeMain";
 import Hero from "@/components/Hero";
+import HeroNew from "@/components/HeroNew";
 import Integration from "@/components/Integrations";
 import Lamp from "@/components/Lamp";
 import Navbar from "@/components/Navbar";
 import Perks from "@/components/Perks";
 import Pricing from "@/components/Pricing";
+import Section from "@/components/Section";
 import StickyContent from "@/components/StickyContent";
 import { TabsFeatures } from "@/components/TabsFeatures";
 import { TimelineDemo } from "@/components/Timeline";
@@ -26,6 +32,8 @@ import { MultiStepLoader } from "@/components/ui/multi-step-loader";
 import { Spotlight } from "@/components/ui/spotlight";
 import { TextReveal } from "@/components/ui/text-reveal";
 import UniversalModal from "@/components/UniversalModal";
+import AIHealthcareHero from "@/components/VideoChat";
+import AIAgentSection from "@/components/VideoChat";
 import { IconSquareRoundedX } from "@tabler/icons-react";
 import { ArrowRightIcon, X } from "lucide-react";
 import { Metadata } from "next";
@@ -68,51 +76,19 @@ function Page() {
       <main className="mx-auto w-full z-40 relative">
         <Background>
           <Wrapper className="py-20 relative">
-            <div className="flex flex-col items-center justify-center w-full py-20 text-center">
-              <div className="flex items-center justify-center lg:gap-16 w-full absolute top-[15%] left-1/2 -translate-x-1/2 -z-10">
-                <div className="w-52 h-52 rounded-full bg-blue-500 blur-[10rem] opacity-70 -z-10"></div>
-                <div className="hidden lg:w-52 h-52 rounded-full bg-blue-500 blur-[10rem] opacity-70 -z-10"></div>
-              </div>
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                <span>✨ Limited time deal! Get flat 75% OFF</span>
-                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-              </AnimatedShinyText>
-              <h1 className="text-slate-800 py-6 text-4xl sm:text-6xl md:text-7xl font-semibold md:font-bold !leading-snug tracking-normal text-balance w-full">
-                Mental Health Matters Through
-                <br /> <MorphingText texts={texts} className="text-[#345e7b]" />
-                Patient Care
-              </h1>
-              <p className="text-muted-foreground text-base md:text-lg max-w-xl py-2">
-                Give your staff more time for what matters most - patient care.
-                AI-powered voice assistance that maintains the human touch.
-              </p>
-              <div className="flex flex-row md:flex-row items-center justify-center gap-4 mt-8 w-full">
-                <Link
-                  href="#"
-                  onClick={() => setLoading(true)}
-                  className="custom-button-css"
-                >
-                  Start for free
-                  <ArrowRightIcon className="w-4 h-4 ml-1.5" />
-                </Link>
-                <Link
-                  href="https://app.patientsat.ai/roi-calculator"
-                  target="_blank"
-                  className="custom-button-css add-button-css"
-                >
-                  {/* <Icons.store className="w-4 h-4 mr-1.5" /> */}
-                  Calculate your ROI
-                </Link>
-              </div>
-            </div>
+            <HeroNew />
+            <AuroraBackgroundDemo />
+            {/* <AIShowcase /> */}
 
             <Drawback />
-            <Agents />
+            <AIHealthcareHero />
+            {/* <Agents /> */}
+            <TimelineDemo />
             <Perks />
-
+            <EHRIntegrationSection />
             {/* <TabsFeatures /> */}
             {/* <TextReveal text="Magic UI will change the way you design." /> */}
-            <TimelineDemo />
+
             <Integration />
             <GlobeDemo />
             <Pricing

@@ -7,11 +7,12 @@
     "config": "tailwind.config.ts",
     "css": "src/styles/globals.css",
     "baseColor": "neutral",
-    "cssVariables": true,
+    "cssVariables": false,
     "prefix": ""
   },
   "aliases": {
     "components": "@/components",
     "utils": "@/functions"
-  }
+  },
+  "iconLibrary": "lucide"
 }

@@ -3,6 +3,9 @@ import "../styles/globals.css";
 import { cn, generateMetadata } from "@/functions";
 import { inter, satoshi } from "@/constants";
 import { Metadata } from "next";
+import Script from "next/script";
+import LocomotiveScroll from "@/components/LocomotiveScroll";
+import Head from "next/head";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -50,7 +53,26 @@ export default function RootLayout({
           satoshi.variable
         )}
       >
-        {children}
+        <Script id="vg-config" strategy="beforeInteractive">
+          {`
+        window.VG_CONFIG = {
+          ID: "QjSfIejHqyGT8cqNO2ll", // YOUR AGENT ID
+          region: 'eu', // YOUR ACCOUNT REGION 
+          render: 'bottom-right', // can be 'full-width' or 'bottom-left' or 'bottom-right'
+          stylesheets: [
+            "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+          ],
+        };
+      `}
+        </Script>
+
+        {/* Load the external script */}
+        <Script
+          src="https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js"
+          strategy="lazyOnload"
+          defer
+        />
+        <LocomotiveScroll>{children}</LocomotiveScroll>
       </body>
     </html>
   );
