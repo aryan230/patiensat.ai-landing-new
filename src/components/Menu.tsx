@@ -28,19 +28,50 @@ interface Props {
   href: string;
   children: React.ReactNode;
   icon: React.ReactNode;
+  imgURL: string;
 }
 
 const Menu = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        {" "}
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
+          <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground bg-transparent hover:bg-transparent">
+            Agents
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-1 p-1 md:w-[400px] md:grid-cols-1 lg:w-[400px] xl:w-[400px]">
+              {" "}
+              <Agent
+                title="Sarah"
+                href="/agents/sarah"
+                icon={<Calculator className="w-5 h-5" />}
+                imgURL="/images/agents/sarah.png"
+              >
+                Intake & Scheduling Specialist
+              </Agent>
+            </ul>
+            <ul className="grid w-[400px] gap-1 p-1 md:w-[400px] md:grid-cols-1 lg:w-[400px] xl:w-[400px]">
+              {" "}
+              <Agent
+                title="Emma"
+                href="/agents/emma"
+                icon={<Calculator className="w-5 h-5" />}
+                imgURL="/images/agents/emma.png"
+              >
+                Intake & Scheduling Specialist
+              </Agent>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        {/* <NavigationMenuItem>
+          <Link href="/agents/sarah" legacyBehavior passHref>
             <NavigationMenuLink className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none">
-              Features
+              Agents
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground bg-transparent">
             Request Demo
@@ -142,6 +173,34 @@ const Menu = () => {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+  );
+};
+
+const Agent = ({ title, href, children, imgURL, icon, ...props }: Props) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          passHref
+          href={href}
+          target="_blank"
+          {...props}
+          className="grid grid-cols-[.15fr_1fr] select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/50 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
+        >
+          <div className="flex items-center mt-1 justify-center w-20 h-20 rounded-md border border-border/80">
+            <img src={imgURL} />
+          </div>
+          <div className="text-start ml-3">
+            <span className="text-sm group-hover:text-foreground font-normal leading-none">
+              {title}
+            </span>
+            <p className="text-sm mt-0.5 line-clamp-2 text-muted-foreground">
+              {children}
+            </p>
+          </div>
+        </Link>
+      </NavigationMenuLink>
+    </li>
   );
 };
 

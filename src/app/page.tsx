@@ -3,6 +3,10 @@ import { Agents } from "@/components/Agents";
 import { AuroraBackgroundDemo } from "@/components/Agents/ViewAgent";
 import AIShowcase from "@/components/AIAgents";
 import AICardShowcase from "@/components/AICard";
+import ComplianceSection from "@/components/Compliance/Compliance";
+import ComplianceTwo from "@/components/Compliance/ComplianceTwo";
+import ConsultationPage from "@/components/Compliance/Consultation";
+import Consultation from "@/components/Compliance/Consultation";
 import { AnimatedBeamDemo } from "@/components/Connections";
 import Drawback from "@/components/Drawback";
 import { FollowingPointerDemo } from "@/components/Drawbacks/Drawbacks";
@@ -17,6 +21,7 @@ import { GlobeDemo } from "@/components/GlobeMain";
 import Hero from "@/components/Hero";
 import HeroNew from "@/components/HeroNew";
 import Integration from "@/components/Integrations";
+import IntegrationsShowcase from "@/components/Integrations/Integration";
 import Lamp from "@/components/Lamp";
 import Navbar from "@/components/Navbar";
 import Perks from "@/components/Perks";
@@ -79,23 +84,23 @@ function Page() {
             <HeroNew />
             <AuroraBackgroundDemo />
             {/* <AIShowcase /> */}
-
             <Drawback />
             <AIHealthcareHero />
             {/* <Agents /> */}
             <TimelineDemo />
+            <ComplianceSection />
+            <ConsultationPage />
+            {/* <ComplianceTwo /> */}
             <Perks />
             <EHRIntegrationSection />
             {/* <TabsFeatures /> */}
             {/* <TextReveal text="Magic UI will change the way you design." /> */}
-
             <Integration />
             <GlobeDemo />
             <Pricing
               setLoading={setLoading}
               setLoadingStates={setLoadingStates}
             />
-
             {/* <AnimatedBeamDemo /> */}
             <Lamp setLoading={setLoading} setLoadingStates={setLoadingStates} />
             {/* <Container className="py-8 lg:py-20">

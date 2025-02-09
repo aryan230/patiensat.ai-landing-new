@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Network, Lock, Workflow } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const EHRIntegrationSection = () => {
+  const router = useRouter();
   const ehrSystems = [
     {
       name: "Epic Systems",
@@ -147,7 +149,12 @@ const EHRIntegrationSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <button className="bg-[#025F81] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#002950] transition-colors shadow-lg hover:shadow-xl">
+          <button
+            onClick={() => {
+              router.push("/integrations");
+            }}
+            className="bg-[#025F81] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#002950] transition-colors shadow-lg hover:shadow-xl"
+          >
             Explore Integration Options
           </button>
         </motion.div>

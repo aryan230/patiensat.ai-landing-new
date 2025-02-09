@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "../ui/aurora-background";
+import { useRouter } from "next/navigation";
 
 export function AuroraBackgroundDemo() {
+  const router = useRouter();
   return (
     <AuroraBackground>
       <motion.div
@@ -29,7 +31,12 @@ export function AuroraBackgroundDemo() {
           <img className="w-[23em] m-2" src="/images/agents/two.png" alt="" />
           <img className="w-[23em] m-2" src="/images/agents/three.png" alt="" />
         </div>
-        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+        <button
+          className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2"
+          onClick={() => {
+            router.push("/agents/sarah");
+          }}
+        >
           View all
         </button>
       </motion.div>
