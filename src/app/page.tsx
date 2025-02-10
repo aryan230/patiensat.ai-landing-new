@@ -21,6 +21,7 @@ import { GlobeDemo } from "@/components/GlobeMain";
 import Hero from "@/components/Hero";
 import HeroNew from "@/components/HeroNew";
 import Integration from "@/components/Integrations";
+import APIIntegrationSection from "@/components/Integrations/CodeIntegration";
 import IntegrationsShowcase from "@/components/Integrations/Integration";
 import Lamp from "@/components/Lamp";
 import Navbar from "@/components/Navbar";
@@ -92,6 +93,7 @@ function Page() {
             <ConsultationPage />
             {/* <ComplianceTwo /> */}
             <Perks />
+            <APIIntegrationSection />
             <EHRIntegrationSection />
             {/* <TabsFeatures /> */}
             {/* <TextReveal text="Magic UI will change the way you design." /> */}

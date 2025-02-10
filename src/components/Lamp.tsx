@@ -15,7 +15,7 @@ function Lamp({
   setLoadingStates: React.PropTypes.any;
 }) {
   return (
-    <MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
+    <MaxWidthWrapper className="mt-0 max-w-[100vw] overflow-x-hidden scrollbar-hide">
       <AnimationContainer delay={0.1}>
         <LampContainer>
           <div className="flex flex-col items-center justify-center relative w-full text-center">

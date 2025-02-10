@@ -19,7 +19,7 @@ const AIAgentProfile = () => {
     {
       name: "Emily Thompson",
       role: "Patient",
-      image: "/api/placeholder/64/64",
+      image: "https://ui-avatars.com/api/?name=John+Doe",
       text: "Sarah has been incredibly helpful in managing my chronic condition. Her reminders and check-ins have made a real difference in my daily health routine.",
       rating: 5,
     },
@@ -214,7 +214,7 @@ const AIAgentProfile = () => {
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <img
-                      src={testimonial.image}
+                      src={`https://ui-avatars.com/api/?name=${testimonial.name}`}
                       alt={testimonial.name}
                       className="w-16 h-16 rounded-full object-cover"
                     />

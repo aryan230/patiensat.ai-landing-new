@@ -85,12 +85,12 @@ const ComplianceSection = () => {
             <h1 className="text-6xl font-bold text-[#002950] leading-tight mb-6">
               Secure Your Patient Data with
               <br />
-              <span className="text-[#025F81]">Complete Compliance</span> →
+              <span className="text-[#025F81]">Complete Compliance</span> ↓
             </h1>
           </motion.div>
 
           <div className="relative h-[600px] flex items-center justify-center pt-20">
-            <img src="/images/24.png" alt="" className="h-fit" />
+            <img src="/images/25.png" alt="" className="h-fit" />
             {/* <CardStack items={CARDS} /> */}
           </div>
         </div>
