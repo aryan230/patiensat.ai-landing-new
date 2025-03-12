@@ -73,7 +73,7 @@ const ComplianceSection = () => {
   ];
 
   return (
-    <section className="bg-white py-20 min-h-screen pt-36">
+    <section className="hidden md:block bg-white py-20 min-h-screen pt-36">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="w-full flex flex-col items-center justify-center">
           <motion.div
@@ -89,8 +89,8 @@ const ComplianceSection = () => {
             </h1>
           </motion.div>
 
-          <div className="relative h-[600px] flex items-center justify-center pt-20">
-            <img src="/images/25.png" alt="" className="h-fit" />
+          <div className="relative h-[300px] flex items-center justify-center pt-20">
+            <img src="/images/26.png" alt="" className="h-fit" />
             {/* <CardStack items={CARDS} /> */}
           </div>
         </div>
